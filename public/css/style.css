@@ -1,0 +1,153 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Gradient Background */
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #4e73df, #6f42c1, #17a2b8, #6610f2);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.container {
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    animation: fadeSlide 1s ease forwards;
+}
+
+/* Entry Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Input Styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Input Focus Effect */
+input:focus {
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+    transform: scale(1.02);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    color: #4e73df;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Logout Button Different Color */
+.logout {
+    background: #ff4d4d;
+    color: white;
+}
+
+.logout:hover {
+    background: #e60000;
+}
+
+/* Attendance List */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255,255,255,0.25);
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 8px;
+    font-size: 13px;
+    animation: fadeInItem 0.5s ease;
+}
+
+/* List Animation */
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scrollbar Styling */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media(max-width: 450px) {
+    .container {
+        width: 90%;
+        padding: 30px;
+    }
+}

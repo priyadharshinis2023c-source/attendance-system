@@ -1,0 +1,19 @@
+<h2>Upload Student List</h2>
+<form id="uploadForm">
+  <input type="file" name="file" required>
+  <button type="submit">Upload</button>
+</form>
+
+<script>
+document.getElementById("uploadForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  await fetch("/upload", {
+    method: "POST",
+    body: formData
+  });
+
+  alert("Students Uploaded");
+});
+</script>

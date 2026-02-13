@@ -1,0 +1,5 @@
+{
+  "username": "faculty",
+  "password": "1234",
+  "role": "faculty"
+}

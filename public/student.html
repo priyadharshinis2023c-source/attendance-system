@@ -1,0 +1,33 @@
+<h2>Mark Attendance</h2>
+<input type="text" id="name">
+<button onclick="mark()">Mark</button>
+
+<ul id="list"></ul>
+
+<script>
+async function mark(){
+  const name = document.getElementById("name").value;
+
+  await fetch("/mark", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ studentName: name })
+  });
+}
+
+async function load(){
+  const res = await fetch("/attendance");
+  const data = await res.json();
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  data.forEach(r => {
+    const li = document.createElement("li");
+    li.innerText = r.studentName + " - " + new Date(r.date).toLocaleDateString();
+    list.appendChild(li);
+  });
+}
+
+setInterval(load, 2000); // Real-time every 2 seconds
+</script>
